@@ -1,17 +1,29 @@
 import React from "react";
 import { AiFillDelete } from "react-icons/ai";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
+  const { cartItems } = useSelector((state) => state.cart);
   const img1 =
     "https://www.reliancedigital.in/medias/Apple-MGN63HNA-Laptops-491946461-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNzczNDJ8aW1hZ2UvanBlZ3xpbWFnZXMvaDVhL2gyZC85NDQzMDgzNTgzNTE4LmpwZ3xhYzRiNWIxZGQ2NjNiNWIyYjI0Y2ZkYTZlZWQ3MTFjZTMxYzVmNDBiNmM5Mzk5OTM2OGVkZmExMjMyYjIxNDQ4";
   return (
     <div className="cart">
       <main>
-        <CartItem imgSrc={img1} name="macbook" price="100" qty="10" id="2" />
-        <CartItem imgSrc={img1} name="macbook" price="100" qty="10" id="2" />
-        <CartItem imgSrc={img1} name="macbook" price="100" qty="10" id="2" />
-        <CartItem imgSrc={img1} name="macbook" price="100" qty="10" id="2" />
-        <CartItem imgSrc={img1} name="macbook" price="100" qty="10" id="2" />
+        {cartItems.length > 0 ? (
+          cartItems.map((i) => {
+            return (
+              <CartItem
+                imgSrc={i.imgSrc}
+                name={i.name}
+                price={i.price}
+                qty={i.quantity}
+                id={i.quantity}
+              />
+            );
+          })
+        ) : (
+          <h1>YOUR CART IS EMPTY</h1>
+        )}
       </main>
       <aside>
         <h2>Subtotal: ${2000}</h2>
