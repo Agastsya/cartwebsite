@@ -1,0 +1,36 @@
+@import "colors";
+
+.productCard {
+  background-color: $tertiary;
+  color: black;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  margin: 4rem;
+  transition: all 0.5s;
+  border-radius: 5px;
+  cursor: pointer;
+
+  > img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+  > button {
+    background-color: $secondary;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    color: white;
+    margin: 1rem;
+    cursor: pointer;
+    &:hover {
+      background-color: $secondarydark;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}

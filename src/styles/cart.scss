@@ -1,0 +1,84 @@
+.cart {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  > main {
+    padding: 2rem;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    > h1 {
+      color: $tertiary;
+      font: 200 2rem "Nunito";
+    }
+  }
+  > aside {
+    border-radius: 100px 0 0 100px;
+    background-color: $primary;
+    height: 100%;
+    width: 100%;
+    box-shadow: -10px 0 10px rgb(0, 0, 00.182);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: $tertiary;
+    > h2 {
+      margin: 1rem;
+      font: 100 1.8rem "Nunito";
+      letter-spacing: 2px;
+      &:last-of-type {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.cartItem {
+  background-color: $tertiary;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 1fr;
+  align-items: center;
+  > img {
+    height: 200px;
+    width: 100%;
+    object-fit: contain;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    > button {
+      background-color: $primary;
+      color: $tertiary;
+      padding: 0.4rem 0.9rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: $secondarydark;
+        color: $tertiary;
+      }
+    }
+    > p {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+    }
+  }
+  > svg {
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: inline-block;
+    margin: auto;
+    color: $primary;
+    &:hover {
+      color: $secondarydark;
+    }
+  }
+}
